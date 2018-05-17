@@ -47,7 +47,7 @@ const appRoutes: Routes = [
     component: RegisterComponent
   },
   {
-    path: 'dashboard',
+    path: 'dashboard/:username',
     component: DashboardComponent
   },
   {

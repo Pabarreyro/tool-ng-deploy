@@ -12,6 +12,7 @@ import { User } from '../models/user.model';
 
 export class LoginComponent {
   usernameValid: boolean = null;
+  sessionUserId: string = null;
 
   constructor(private router: Router, private userService: UserService) { }
 
@@ -19,7 +20,7 @@ export class LoginComponent {
     this.validateInput(username);
     if (this.usernameValid) {
       this.sendUserAuthRequest(username, password);
-      // this.getUserProfile(username);
+      this.getUserProfile(username, this.sessionUserId);
     } else {
       alert('Login Failed.');
     }
@@ -35,13 +36,14 @@ export class LoginComponent {
   }
 
   sendUserAuthRequest(username: string, password: string) {
-    this.userService.loginUser(username, password).subscribe((res: Response) => {
-      console.log(res);
+    this.userService.loginUser(username, password).subscribe((response:any) => {
+      return response.id.toString();
     });
   }
 
-  getUserProfile(username:string) {
-    this.userService.getUser(username).subscribe((res: Response) => {
+  getUserProfile(username: string, user_id:string) {
+    console.log(user_id);
+    this.userService.getUser(user_id).subscribe((res: Response) => {
       console.log(res);
     });
     this.router.navigate(['dashboard', username]);

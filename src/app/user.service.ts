@@ -4,8 +4,6 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 import { Http } from '@angular/http';
 import { User } from './models/user.model';
-import { USER } from './test-data';
-
 
 const httpOptions = {
   headers: new HttpHeaders({"Content-Type": 'application/json' })
@@ -14,12 +12,12 @@ const httpOptions = {
 
 @Injectable()
 export class UserService {
-  private endpoint = 'tool-libarary.herokuapp.com/api/';
+  private endpoint = 'https://tools-libarary.herokuapp.com/api/';
 
   constructor(private http: HttpClient) { }
 
-  getUser(user:string) {
-    let apiLoginEndpoint = `${this.endpoint}user/${user}`;
+  getUser(user_id:string) {
+    let apiLoginEndpoint = `${this.endpoint}userProfiles/${user_id}/detail/`;
     return this.http.get(apiLoginEndpoint, httpOptions);
   }
 
