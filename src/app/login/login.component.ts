@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { UserService } from '../user.service';
+import { User } from '../models/user.model';
 
 @Component({
   selector: 'app-login',
@@ -18,6 +19,7 @@ export class LoginComponent {
     this.validateInput(username);
     if (this.usernameValid) {
       this.sendUserAuthRequest(username, password);
+      // this.getUserProfile(username);
     } else {
       alert('Login Failed.');
     }
@@ -33,7 +35,15 @@ export class LoginComponent {
   }
 
   sendUserAuthRequest(username: string, password: string) {
-    this.userService.loginUser(username, password);
-    this.router.navigate(['']);
+    this.userService.loginUser(username, password).subscribe((res: Response) => {
+      console.log(res);
+    });
+  }
+
+  getUserProfile(username:string) {
+    this.userService.getUser(username).subscribe((res: Response) => {
+      console.log(res);
+    });
+    this.router.navigate(['dashboard', username]);
   }
 }
