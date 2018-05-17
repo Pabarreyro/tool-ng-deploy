@@ -1,0 +1,44 @@
+.tools-contain {
+    display: flex;
+    flex-flow: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.card {
+  width: 300px;
+  height: auto;
+  margin: 20px;
+  background-color: #DDDDDD;
+  box-shadow:8px 10px 20px 0 rgba(46,61,73,.15);
+}
+
+.card:hover{
+  box-shadow: 2px 4px 8px 0 rgba(46,61,73,.2);
+}
+
+
+img {
+  height: 180px;
+  width: 100%;
+  display: block;
+}
+
+a {
+  text-decoration: none;
+}
+
+.card-text {
+  text-align: center;
+  font-weight: 400;
+  margin-top: 11%;
+  color: #000000b5;
+
+}
+
+.card-body {
+  height: 70px;
+  padding: 0;
+  background-color: #DDDDDD;
+
+}

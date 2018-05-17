@@ -1,0 +1,93 @@
+.tools-contain {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+
+}
+
+.toolsList {
+  width: 258px;
+  margin: 10px;
+}
+
+.toolItemHeader {
+  background-color: #ccc;
+  padding: 6px 8px 4px 12px;
+}
+
+
+.avail-y {
+  font-style: italic;
+  color: #777777;
+  margin-top: 5%;
+}
+
+[data-value="available"] {
+  color: rgba(0, 123, 255, 0.5);
+  font-weight: 500;
+  font-style: normal;
+  text-transform: uppercase;
+}
+
+[data-value="borrowed"] {
+  color: #8d3b3b;
+  font-weight: 500;
+  font-style: normal;
+  text-transform: uppercase;
+}
+
+[data-value*="overDue"] {
+  color: #dc3545c9;
+  font-weight: 500;
+  font-style: normal;
+  text-transform: uppercase;
+}
+
+
+[data-toggle="collapse"]:after {
+  display: inline-block;
+  font: normal normal normal 10px/1 FontAwesome;
+  font-size: 14px;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  content: "\f054";
+  transform: rotate(90deg) ;
+  transition: all linear 0.25s;
+  margin-left: 93%;
+  color: white;
+}
+
+
+
+
+[data-toggle="collapse"].collapsed:after {
+  transform: rotate(0deg) ;
+}
+
+.ulist:after{
+  width: 100%;
+  left: 0;
+}
+
+
+.card-img-bottom {
+  display: block;
+  z-index: 2;
+  position: relative;
+}
+
+ul {
+  position: absolute;
+  z-index: 100;
+  background-color: #110d0ea3;
+  color: #fcfcfceb;
+  font-weight: 300;
+  width:258px;
+  max-width: 258px;
+  list-style-type: circle;
+}
+
+#ulBold {
+  font-weight: 500;
+}

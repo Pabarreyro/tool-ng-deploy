@@ -1,0 +1,31 @@
+h2 {
+  font-size: 1.5rem;
+  text-transform: uppercase;
+}
+
+h3 {
+  font-size: 1.1rem;
+}
+
+h4 {
+  margin: 0;
+}
+
+p {
+  margin: 10px 0;
+}
+
+#user-info {
+  display: flex;
+  justify-content: flex-start;
+  padding: 20px;
+}
+
+#user-info div {
+  margin-right: 100px;
+}
+
+#tool-bucket {
+  display: flex;
+  padding: 25px;
+}
